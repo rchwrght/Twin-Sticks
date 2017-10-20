@@ -9,10 +9,6 @@ public class CameraController : MonoBehaviour {
 
     private float yTransform;
 
-	void Start () {
-        float offsetY = 8;
-	}
-	
 	
 	void Update () {
         float playerPos = player.transform.position.z;

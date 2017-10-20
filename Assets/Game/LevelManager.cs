@@ -25,5 +25,14 @@ public class LevelManager : MonoBehaviour {
 	
 	public void LoadNextLevel() {
 		Application.LoadLevel(Application.loadedLevel + 1);
+        PlayerPrefsManager.UnlockLevel(Application.loadedLevel + 1);
 	}
+
+    public void LoadSelectedLevel(int level) {
+        if (PlayerPrefsManager.IsLevelUnlocked(level)) {
+            Application.LoadLevel(level);
+        } else {
+            Debug.Log("Level " + level + " is not unlocked");
+        }
+    }
 }
