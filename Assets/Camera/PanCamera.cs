@@ -5,12 +5,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 
-    public GameObject player;
-
+    private GameObject player;
     private float yTransform;
 
-	
-	void Update () {
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    void LateUpdate() {
         float playerPos = player.transform.position.z;
         transform.position = new Vector3(transform.position.x, transform.position.y, playerPos);
     }
